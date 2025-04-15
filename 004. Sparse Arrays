@@ -1,0 +1,12 @@
+    public static List<Integer> matchingStrings(List<String> stringList, List<String> queries) {
+        List<Integer> list = new ArrayList<>();
+        for(String q : queries){
+            int num = 0;
+            for(String sl : stringList){
+                if (q.equals(sl))
+                    num++;
+            }
+            list.add(num);
+        }
+        return list;
+    }
