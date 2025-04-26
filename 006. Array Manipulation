@@ -1,0 +1,16 @@
+    public static long arrayManipulation(int n, List<List<Integer>> queries) {
+        long[] arr = new long[n];
+        for(List<Integer> query : queries){
+            arr[query.get(0) - 1] += query.get(2);
+            if(query.get(1) < n){
+                arr[query.get(1)] -= query.get(2);
+            }
+        }
+        long max = 0;
+        long res = Long.MIN_VALUE;
+        for(long i : arr){
+            max += i;
+            res = Math.max(max, res);
+        }
+        return res;
+    }
